@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="72888920939-vkevk01oevtbu6onui1p5orqbu90gbfr.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+    
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <div class="token-field">
+      <h6 ><b>The Token for the access is :</b></h6>
+      <p id="message">lalalalalalalalal</p>
+    </div>
+    <hr>
+
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        //console.log(JSON.stringify(googleUser.getAuthResponse().id_token))
+        document.getElementById("message").innerText=JSON.stringify(googleUser.getAuthResponse().id_token)
+        /*
+        console.log(JSON.stringify(googleUser.getAuthResponse()))
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+        */
+        
+      }
+
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+    </script>
+  </body>
+</html>
