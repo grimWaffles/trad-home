@@ -23,11 +23,13 @@
     
     <div id="app"></div>
     <!-- built files will be auto injected -->
-    <div class="token-field">
+    <!--
+      <div class="token-field">
       <h6 ><b>The Token for the access is :</b></h6>
       <p id="message">lalalalalalalalal</p>
     </div>
     <hr>
+    -->
 
     <script>
       function onSignIn(googleUser) {
@@ -40,7 +42,6 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
         */
-        
       }
 
       function signOut() {

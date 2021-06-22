@@ -8,12 +8,17 @@ import Login from "../views/Login";
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: 'Login',
+    component: Login,
+  },
+  {
+    path: "/home",
+    name: 'Home',
     component: Home,
   },
   {
     path: "/about",
-    name: "About",
+    name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -22,23 +27,18 @@ const routes = [
   },
   {
     path: "/student",
-    name: "Student",
+    name: 'Student',
     component: Student,
   },
   {
     path:"/privacy",
-    name:"PrivacyPolicy",
+    name:'PrivacyPolicy',
     component:PrivacyPolicy
   },
   {
     path:"/tos",
-    name:"tos",
+    name: 'Tos',
     component:tos
-  },
-  {
-    path:"/login",
-    name:"Login",
-    component:Login
   }
 ];
 
